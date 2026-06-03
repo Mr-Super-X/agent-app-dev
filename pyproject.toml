@@ -1,0 +1,17 @@
+[project]
+name = "agent-tutorial-examples"
+version = "0.1.0"
+description = "教程配套 examples"
+requires-python = ">=3.11"
+dependencies = []
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
