@@ -1,0 +1,28 @@
+# OMC 状态与会话
+.omc/
+
+# Superpowers 头脑风暴临时文件
+.superpowers/brainstorm/
+
+# 依赖
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# 构建产物
+dist/
+.vitepress/dist/
+.vitepress/cache/
+
+# 环境变量
+.env
+.env.local
+.env.*.local
+
+# 编辑器
+.idea/
+.vscode/
+*.swp
+.DS_Store
