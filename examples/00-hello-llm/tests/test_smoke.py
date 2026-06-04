@@ -1,5 +1,10 @@
 """冒烟测试：验证 LLM 调用可成功发起（mock 网络层）。"""
+import sys
+from pathlib import Path
 from unittest.mock import patch, MagicMock
+
+# 把 py/ 父目录加到 sys.path，使 `from py.main import call_llm` 可解析
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from py.main import call_llm
 
