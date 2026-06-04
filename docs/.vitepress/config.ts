@@ -4,6 +4,11 @@ export default defineConfig({
   title: '大模型 Agent 应用开发学习教程',
   description: '从初级开发者到生产级 Agent 工程师的体系化教程',
   lang: 'zh-CN',
+  // 排除 superpowers 工作目录(spec/plan)与未发布草稿
+  srcExclude: ['**/superpowers/**'],
+  // 教程中 `/examples/00-hello-llm` 等指向仓内 README（非站点路由），
+  // 留作 v1.1 增设 examples 路由后移除
+  ignoreDeadLinks: true,
   themeConfig: {
     nav: [
       { text: '入门教程', link: '/getting-started/00-roadmap' },
@@ -49,3 +54,4 @@ export default defineConfig({
     outline: { level: [2, 3] }
   }
 })
+
