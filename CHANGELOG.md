@@ -15,3 +15,5 @@
 - Ch5 工具调用（[05-tool-calling](/getting-started/02-core/05-tool-calling)）
 - Ch6 Agent 架构（[06-agent-architecture](/getting-started/02-core/06-agent-architecture)）
 - Ch7 Agent 框架横评（[07-frameworks](/getting-started/03-advanced/07-frameworks)）
+- Ch8 场景题（[08-scenarios](/getting-started/03-advanced/08-scenarios)）
+- Ch9 开放问题（[09-open-questions](/getting-started/03-advanced/09-open-questions)）
