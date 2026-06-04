@@ -17,4 +17,16 @@
 - Ch7 Agent 框架横评（[07-frameworks](/getting-started/03-advanced/07-frameworks)）
 - Ch8 场景题（[08-scenarios](/getting-started/03-advanced/08-scenarios)）
 - Ch9 开放问题（[09-open-questions](/getting-started/03-advanced/09-open-questions)）
-- 进阶 Ch0 前置（[00-prerequisites](/production/00-prerequisites)） + Ch1 系统设计（[01-system-design](/production/01-system-design)） + 4 个生产组件 demo（[09-system-design](/examples/09-system-design/）)
+- 进阶 Ch0 前置（[00-prerequisites](/production/00-prerequisites)）
+- 进阶 Ch1 系统设计（[01-system-design](/production/01-system-design)） + 4 个生产组件 demo（限流/缓存/降级/成本监控，[examples/09-system-design](/examples/09-system-design)）
+- 进阶 Ch2 评估与优化（[02-evaluation](/production/02-evaluation)） + Benchmark/judge/反馈环 demo（[examples/10-evaluation](/examples/10-evaluation)）
+- 进阶 Ch3 安全与风险（[03-security](/production/03-security)） + 注入/越狱/脱敏 demo（[examples/11-security](/examples/11-security)）
+- 进阶 Ch4 工程实战（[04-engineering](/production/04-engineering)） + Python 异步 + TS Vercel AI SDK 集成 demo（[examples/12-engineering-async](/examples/12-engineering-async)）
+- examples 13 个：00-hello-llm / 01-prompt-cot / 02-rag-pipeline / 03-tool-calling / 04-agent-architecture / 05-frameworks-compare / 06-customer-service / 07-code-generation / 08-multi-agent / 09-system-design / 10-evaluation / 11-security / 12-engineering-async
+
+### Verified (Task 18 全量核验)
+- 入门 9 章 + 进阶 4 章 = **13 章全部发布**，每章带"📌 前置阅读"声明（[验证结果见 commit message](#)）
+- VitePress 双侧栏导航：`/`、`/getting-started/`、`/production/` 三段 sidebar 配齐（`docs/.vitepress/config.ts`）
+- 进阶 Ch3 含 3 张威胁模型 Mermaid 图（注入/越狱/验证）
+- 进阶 Ch4 工程实战：Python 异步 pipeline + TS Vercel AI SDK 流式 UI 双 demo（`examples/12-engineering-async/`）
+- 进阶 4 章均带"前置阅读"+"下章"互引指针（00→01→02→03→04→00-roadmap 闭环）
