@@ -2,6 +2,16 @@
 
 所有教程章节的变更记录在此。格式参考 [Keep a Changelog](https://keepachangelog.com/)。
 
+## [1.0.0] - 2026-06-04
+
+### Added
+- 入门教程 9 章：基础认知 → LLM 基础 → 提示工程 → RAG → 工具调用 → Agent 架构 → Agent 框架 → 场景题 → 开放问题
+- 生产进阶 4 章：系统设计 → 评估与优化 → 安全与风险 → 工程实战
+- 13 个最小可运行 examples（Python 默认 + TS Web 集成）
+- VitePress 1.6.4 双侧栏静态站点
+- CI/CD：examples 冒烟测试 + docs 构建 + 站内链接检查
+- GitHub Pages deploy workflow（待用户推 main 触发）
+
 ## [Unreleased]
 
 ### Added
