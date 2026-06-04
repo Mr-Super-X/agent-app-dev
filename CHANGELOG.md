@@ -17,3 +17,4 @@
 - Ch7 Agent 框架横评（[07-frameworks](/getting-started/03-advanced/07-frameworks)）
 - Ch8 场景题（[08-scenarios](/getting-started/03-advanced/08-scenarios)）
 - Ch9 开放问题（[09-open-questions](/getting-started/03-advanced/09-open-questions)）
+- 进阶 Ch0 前置（[00-prerequisites](/production/00-prerequisites)） + Ch1 系统设计（[01-system-design](/production/01-system-design)） + 4 个生产组件 demo（[09-system-design](/examples/09-system-design/）)
