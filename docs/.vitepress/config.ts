@@ -18,6 +18,10 @@ export default withMermaid(
       { text: '生产进阶', link: '/production/00-prerequisites' }
     ],
     sidebar: {
+      '/operations/': [
+        { text: '部署文档（DEPLOY）', link: 'operations/deploy' },
+        { text: 'E2E 跑通记录', link: 'operations/e2e-run' }
+      ],
       '/examples/': [
         { text: '00 hello-llm', link: 'https://github.com/Mr-Super-X/agent-app-dev/tree/main/examples/00-hello-llm' },
         { text: '01 prompt-cot', link: 'https://github.com/Mr-Super-X/agent-app-dev/tree/main/examples/01-prompt-cot' },

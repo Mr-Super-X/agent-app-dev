@@ -130,3 +130,18 @@ graph LR
     <div class="desc">限流、缓存、可观测性与上线</div>
   </a>
 </div>
+
+## 📋 运维文档
+
+<div class="chapter-grid">
+  <a class="chapter-card" href="operations/deploy">
+    <div class="emoji">🚀</div>
+    <div class="title">部署文档</div>
+    <div class="desc">GitHub Pages / Vercel / 自建 3 种部署方案</div>
+  </a>
+  <a class="chapter-card" href="operations/e2e-run">
+    <div class="emoji">✅</div>
+    <div class="title">E2E 跑通记录</div>
+    <div class="desc">DeepSeek 跑通 2/13 example 验证</div>
+  </a>
+</div>
