@@ -4,6 +4,8 @@ export default defineConfig({
   title: '大模型 Agent 应用开发学习教程',
   description: '从初级开发者到生产级 Agent 工程师的体系化教程',
   lang: 'zh-CN',
+  // GitHub Pages 子路径部署必须设 base，否则 asset/CSS 加载 404
+  base: '/agent-app-dev/',
   // 排除 superpowers 工作目录(spec/plan)与未发布草稿
   srcExclude: ['**/superpowers/**'],
   // 教程中 `/examples/00-hello-llm` 等指向仓内 README（非站点路由），
