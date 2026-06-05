@@ -12,9 +12,10 @@
     "examples:test": "node scripts/run-smoke-tests.mjs"
   },
   "devDependencies": {
-    "vitepress": "^1.6.0",
-    "vue": "^3.4.0",
     "mermaid": "^11.0.0",
-    "typescript": "^5.4.0"
+    "typescript": "^5.4.0",
+    "vitepress": "^1.6.0",
+    "vitepress-plugin-mermaid": "^2.0.17",
+    "vue": "^3.4.0"
   }
 }

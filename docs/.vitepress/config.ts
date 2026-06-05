@@ -1,6 +1,9 @@
 import { defineConfig } from 'vitepress'
+import { withMermaid } from 'vitepress-plugin-mermaid'
 
-export default defineConfig({
+// withMermaid 在 markdown.config 注册 mermaid fence 拦截器，并向 vite.plugins
+// 注入 MermaidPlugin（其 transform 钩子会把 Mermaid.vue 注册为全局组件）
+export default withMermaid(defineConfig({
   title: '大模型 Agent 应用开发学习教程',
   description: '从初级开发者到生产级 Agent 工程师的体系化教程',
   lang: 'zh-CN',
@@ -55,5 +58,5 @@ export default defineConfig({
     search: { provider: 'local' },
     outline: { level: [2, 3] }
   }
-})
+}))
 
