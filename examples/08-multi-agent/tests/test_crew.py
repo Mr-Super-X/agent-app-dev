@@ -9,7 +9,7 @@ from unittest.mock import MagicMock, patch
 ROOT = Path(__file__).resolve().parent.parent.parent
 sys.path.insert(0, str(ROOT / "08-multi-agent"))
 
-from py.crew import run_crew  # noqa: E402
+from app.crew import run_crew  # noqa: E402
 
 
 def _make_mock_client(per_call_content: list[str]) -> MagicMock:
@@ -32,7 +32,7 @@ def test_crew_exits_when_reviewer_says_ok() -> None:
         "ok，文章不错，通过",
     ]
 
-    with patch("py.crew.OpenAI") as mock_openai:
+    with patch("app.crew.OpenAI") as mock_openai:
         mock_openai.return_value = _make_mock_client(per_call)
         result = run_crew("AI 未来", max_turns=5)
 
@@ -51,7 +51,7 @@ def test_crew_exits_when_reviewer_says_approved() -> None:
         "approved，文章质量合格",
     ]
 
-    with patch("py.crew.OpenAI") as mock_openai:
+    with patch("app.crew.OpenAI") as mock_openai:
         mock_openai.return_value = _make_mock_client(per_call)
         result = run_crew("test", max_turns=5)
 
@@ -78,7 +78,7 @@ def test_crew_max_turns_fallback() -> None:
         "需要修改：标题不够吸引人",  # 第 5 轮（max_turns=5）reviewer 仍不 ok
     ]
 
-    with patch("py.crew.OpenAI") as mock_openai:
+    with patch("app.crew.OpenAI") as mock_openai:
         mock_openai.return_value = _make_mock_client(per_call)
         result = run_crew("test", max_turns=5)
 

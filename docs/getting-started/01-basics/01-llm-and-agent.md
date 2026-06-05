@@ -186,4 +186,4 @@ print(resp.choices[0].message.content)
 
 ---
 
-> **本章对应 example**：[`examples/00-hello-llm/`](examples.html) — 5 行代码跑通你的第一次 LLM 调用。
+> **本章对应 example**：[`examples/00-hello-llm/`](examples) — 5 行代码跑通你的第一次 LLM 调用。

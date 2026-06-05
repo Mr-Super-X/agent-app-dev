@@ -1,6 +1,6 @@
 """冒烟测试：3 个评估组件能跑通。"""
-from py.benchmark import Benchmark, BenchmarkTask
-from py.feedback_loop import FeedbackCollector, Feedback
+from app.benchmark import Benchmark, BenchmarkTask
+from app.feedback_loop import FeedbackCollector, Feedback
 
 
 def test_benchmark_scores_keyword_hits():

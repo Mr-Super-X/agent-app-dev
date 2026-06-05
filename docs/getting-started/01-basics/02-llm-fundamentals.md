@@ -125,7 +125,7 @@ if __name__ == "__main__":
 
 中文每字基本吃 1-2 tokens——这是中文成本天然比英文高 1.5-2 倍的原因。**算钱**（GPT-4o-mini 2024）：输入 $0.15/1M、输出 $0.60/1M。1500 输入 + 500 输出 ≈ ¥0.004/次，"日活 1 万 × 5 次 × 30 天" ≈ ¥600/月——生产必须算清 token 账。
 
-> **完整示例**：[`examples/00-hello-llm/`](examples.html)
+> **完整示例**：[`examples/00-hello-llm/`](examples)
 
 ## 4. 常见陷阱
 
@@ -174,4 +174,4 @@ if __name__ == "__main__":
 
 ---
 
-> **本章对应 example**：[`examples/00-hello-llm/py/token_count.py`](examples.html) — 用 tiktoken 实测 token 数。
+> **本章对应 example**：[`examples/00-hello-llm/py/token_count.py`](examples) — 用 tiktoken 实测 token 数。

@@ -1,6 +1,8 @@
 import { defineConfig } from 'vitepress'
+import { withMermaid } from 'vitepress-plugin-mermaid'
 
-export default defineConfig({
+export default withMermaid(
+  defineConfig({
   title: '大模型 Agent 应用开发学习教程',
   description: '从初级开发者到生产级 Agent 工程师的体系化教程',
   lang: 'zh-CN',
@@ -8,8 +10,7 @@ export default defineConfig({
   base: '/agent-app-dev/',
   // 排除 superpowers 工作目录(spec/plan)与未发布草稿
   srcExclude: ['**/superpowers/**'],
-  // 教程中 `/examples/00-hello-llm` 等指向仓内 README（非站点路由），
-  // 留作 v1.1 增设 examples 路由后移除
+  // examples 路由 TODO: v1.1 用 rewrites 真正生效，v1.0 临时关掉
   ignoreDeadLinks: true,
   themeConfig: {
     nav: [
@@ -70,5 +71,6 @@ export default defineConfig({
     search: { provider: 'local' },
     outline: { level: [2, 3] }
   }
-})
+  })
+)
 

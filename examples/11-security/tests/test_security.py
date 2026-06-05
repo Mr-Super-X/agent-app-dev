@@ -1,7 +1,7 @@
 """冒烟测试：3 个安全组件。"""
-from py.injection_detector import is_injection
-from py.jailbreak_filter import is_jailbreak
-from py.data_sanitizer import sanitize
+from app.injection_detector import is_injection
+from app.jailbreak_filter import is_jailbreak
+from app.data_sanitizer import sanitize
 
 
 def test_injection_detector_catches_chinese():

@@ -2,10 +2,10 @@
 import time
 import pytest
 
-from py.rate_limit import TokenBucket
-from py.cache import TTLCache
-from py.fallback import FallbackChain
-from py.cost_monitor import CostTracker
+from app.rate_limit import TokenBucket
+from app.cache import TTLCache
+from app.fallback import FallbackChain
+from app.cost_monitor import CostTracker
 
 
 def test_token_bucket_allows_within_capacity():

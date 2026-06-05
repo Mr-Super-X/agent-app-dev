@@ -9,7 +9,7 @@ from unittest.mock import MagicMock, patch
 ROOT = Path(__file__).resolve().parent.parent.parent
 sys.path.insert(0, str(ROOT / "06-customer-service"))
 
-from py.agent import chat  # noqa: E402
+from app.agent import chat  # noqa: E402
 
 
 def _make_mock_openai(msg: MagicMock) -> MagicMock:
@@ -35,7 +35,7 @@ def test_dangerous_tool_requires_confirmation() -> None:
         )
     ]
 
-    with patch("py.agent.OpenAI") as mock_openai:
+    with patch("app.agent.OpenAI") as mock_openai:
         mock_openai.return_value = _make_mock_openai(mock_msg)
         result = chat("取消订单 123", [])
 
@@ -68,7 +68,7 @@ def test_safe_tool_executes_and_returns_text() -> None:
         MagicMock(choices=[MagicMock(message=second_msg)]),
     ]
 
-    with patch("py.agent.OpenAI") as mock_openai:
+    with patch("app.agent.OpenAI") as mock_openai:
         mock_openai.return_value = mock_client
         result = chat("我的订单 123 呢", [])
 
@@ -83,7 +83,7 @@ def test_no_tool_call_returns_direct_text() -> None:
     mock_msg.content = "您好，我是智能客服"
     mock_msg.tool_calls = None
 
-    with patch("py.agent.OpenAI") as mock_openai:
+    with patch("app.agent.OpenAI") as mock_openai:
         mock_openai.return_value = _make_mock_openai(mock_msg)
         result = chat("你好", [])
 

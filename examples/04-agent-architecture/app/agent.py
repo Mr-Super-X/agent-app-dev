@@ -8,10 +8,10 @@ sys.path.insert(0, str(ROOT / "00-hello-llm"))
 sys.path.insert(0, str(ROOT / "03-tool-calling"))
 sys.path.insert(0, str(ROOT / "04-agent-architecture"))
 
-from py.executor import execute
-from py.memory import Memory
-from py.planner import plan
-from py.reflector import reflect
+from app.executor import execute
+from app.memory import Memory
+from app.planner import plan
+from app.reflector import reflect
 
 
 def run_agent(goal: str, max_retries: int = 3) -> str:

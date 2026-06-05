@@ -3,7 +3,7 @@ import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent / "00-hello-llm"))
 
-from py.main import call_llm
+from app.main import call_llm
 
 COT_PROMPT = """一步步思考下面问题：
 {question}

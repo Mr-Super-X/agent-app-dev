@@ -1,7 +1,7 @@
 """冒烟测试：mock OpenAI 让模型发起 tool_call。"""
 from unittest.mock import patch, MagicMock
 
-from py.function_calling import chat_with_tools
+from app.function_calling import chat_with_tools
 
 
 def test_chat_with_tools_invokes_function():
@@ -24,7 +24,7 @@ def test_chat_with_tools_invokes_function():
     mock_response_final = MagicMock()
     mock_response_final.choices = [MagicMock(message=mock_final_msg)]
 
-    with patch("py.function_calling.OpenAI") as mock_openai:
+    with patch("app.function_calling.OpenAI") as mock_openai:
         mock_client = MagicMock()
         mock_client.chat.completions.create.side_effect = [
             mock_response_with_tools, mock_response_final

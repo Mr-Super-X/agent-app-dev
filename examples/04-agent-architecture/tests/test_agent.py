@@ -8,14 +8,14 @@ sys.path.insert(0, str(ROOT / "00-hello-llm"))
 sys.path.insert(0, str(ROOT / "03-tool-calling"))
 sys.path.insert(0, str(ROOT / "04-agent-architecture"))
 
-from py.agent import run_agent
+from app.agent import run_agent
 
 
 def test_run_agent_succeeds_on_first_try() -> None:
     """冒烟测试：mock 让 planner + reflector 都成功，Agent 一次跑通。"""
-    with patch("py.planner._get_call_llm") as mock_plan_factory, \
-         patch("py.reflector._get_call_llm") as mock_reflect_factory, \
-         patch("py.agent.execute") as mock_exec:
+    with patch("app.planner._get_call_llm") as mock_plan_factory, \
+         patch("app.reflector._get_call_llm") as mock_reflect_factory, \
+         patch("app.agent.execute") as mock_exec:
         mock_plan_factory.return_value = lambda _prompt: (
             '[{"step": 1, "action": "查天气", "tool": "get_weather"}]'
         )
@@ -30,9 +30,9 @@ def test_run_agent_succeeds_on_first_try() -> None:
 
 def test_run_agent_retries_on_reflection_failure() -> None:
     """冒烟测试：第 1 次反思失败，第 2 次成功，验证重试逻辑。"""
-    with patch("py.planner._get_call_llm") as mock_plan_factory, \
-         patch("py.reflector._get_call_llm") as mock_reflect_factory, \
-         patch("py.agent.execute") as mock_exec:
+    with patch("app.planner._get_call_llm") as mock_plan_factory, \
+         patch("app.reflector._get_call_llm") as mock_reflect_factory, \
+         patch("app.agent.execute") as mock_exec:
         mock_plan_factory.return_value = lambda _prompt: (
             '[{"step": 1, "action": "查天气", "tool": "get_weather"}]'
         )

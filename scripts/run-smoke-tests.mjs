@@ -15,7 +15,7 @@ for (const name of dirs) {
   const testFile = join(examplesDir, name, 'tests', 'test_smoke.py');
   if (!existsSync(testFile)) continue;
   console.log(`\n[smoke] ${name}`);
-  const r = spawnSync('pytest', ['tests/', '-q'], {
+  const r = spawnSync('python', ['-m', 'pytest', 'tests/', '-q'], {
     cwd: join(examplesDir, name),
     stdio: 'inherit',
     shell: true,

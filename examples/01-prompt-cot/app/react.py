@@ -4,7 +4,7 @@ import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent / "00-hello-llm"))
 
-from py.main import call_llm
+from app.main import call_llm
 
 REACT_PROMPT = """你是一个能使用工具的助手。可用工具：
 - search(query): 搜索

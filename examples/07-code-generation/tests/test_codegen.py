@@ -9,7 +9,7 @@ from unittest.mock import MagicMock, patch
 ROOT = Path(__file__).resolve().parent.parent.parent
 sys.path.insert(0, str(ROOT / "07-code-generation"))
 
-from py.codegen import (  # noqa: E402
+from app.codegen import (  # noqa: E402
     codegen_with_retry,
     generate_code,
     run_in_sandbox,
@@ -27,7 +27,7 @@ def test_generate_code_extracts_python_block() -> None:
         )
     ]
 
-    with patch("py.codegen.OpenAI") as mock_openai:
+    with patch("app.codegen.OpenAI") as mock_openai:
         mock_openai.return_value.chat.completions.create.return_value = fake_response
         result = generate_code("test")
 
@@ -43,7 +43,7 @@ def test_generate_code_fallback_when_no_block() -> None:
         MagicMock(message=MagicMock(content="print(2)  # 无代码块标记"))
     ]
 
-    with patch("py.codegen.OpenAI") as mock_openai:
+    with patch("app.codegen.OpenAI") as mock_openai:
         mock_openai.return_value.chat.completions.create.return_value = fake_response
         result = generate_code("test")
 
@@ -52,8 +52,8 @@ def test_generate_code_fallback_when_no_block() -> None:
 
 def test_codegen_succeeds_first_try() -> None:
     """验证首次沙箱执行成功时直接返回。"""
-    with patch("py.codegen.generate_code") as mock_gen, patch(
-        "py.codegen.run_in_sandbox"
+    with patch("app.codegen.generate_code") as mock_gen, patch(
+        "app.codegen.run_in_sandbox"
     ) as mock_run:
         mock_gen.return_value = "print(1)"
         mock_run.return_value = (True, "1")
@@ -69,10 +69,10 @@ def test_codegen_succeeds_first_try() -> None:
 
 def test_codegen_retries_then_fails() -> None:
     """验证多次沙箱执行失败时返回错误信息。"""
-    with patch("py.codegen.generate_code") as mock_gen, patch(
-        "py.codegen._regenerate_with_error",
+    with patch("app.codegen.generate_code") as mock_gen, patch(
+        "app.codegen._regenerate_with_error",
         return_value="print(broken)",
-    ), patch("py.codegen.run_in_sandbox") as mock_run:
+    ), patch("app.codegen.run_in_sandbox") as mock_run:
         mock_gen.return_value = "print(broken)"
         mock_run.return_value = (False, "NameError: name 'broken' is not defined")
 
@@ -88,7 +88,7 @@ def test_run_in_sandbox_timeout() -> None:
     """验证沙箱超时被正确捕获。"""
     import subprocess
 
-    with patch("py.codegen.subprocess.run") as mock_run:
+    with patch("app.codegen.subprocess.run") as mock_run:
         mock_run.side_effect = subprocess.TimeoutExpired(cmd="python", timeout=5)
         ok, output = run_in_sandbox("while True: pass", timeout=5)
 

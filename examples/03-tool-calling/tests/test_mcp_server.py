@@ -2,7 +2,7 @@
 import asyncio
 import pytest
 
-from py.mcp_server import list_tools, call_tool
+from app.mcp_server import list_tools, call_tool
 
 
 @pytest.mark.asyncio

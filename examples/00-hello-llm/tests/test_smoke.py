@@ -3,10 +3,10 @@ import sys
 from pathlib import Path
 from unittest.mock import patch, MagicMock
 
-# 把 py/ 父目录加到 sys.path，使 `from py.main import call_llm` 可解析
+# 把 py/ 父目录加到 sys.path，使 `from app.main import call_llm` 可解析
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from py.main import call_llm
+from app.main import call_llm
 
 
 def test_call_llm_returns_text():
@@ -14,7 +14,7 @@ def test_call_llm_returns_text():
     mock_response = MagicMock()
     mock_response.choices = [MagicMock(message=MagicMock(content="你好"))]
 
-    with patch("py.main.OpenAI") as mock_openai:
+    with patch("app.main.OpenAI") as mock_openai:
         mock_client = MagicMock()
         mock_client.chat.completions.create.return_value = mock_response
         mock_openai.return_value = mock_client
