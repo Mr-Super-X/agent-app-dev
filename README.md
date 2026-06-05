@@ -40,7 +40,7 @@ agent-app-dev/
 │   ├── getting-started/ # 入门教程 9 章
 │   ├── production/      # 生产进阶 4 章
 │   ├── examples.md      # 13 examples 索引页
-│   └── operations/      # DEPLOY.md / E2E-RUN.md 运维文档
+│   └── operations/      # deploy.md / e2e-run.md 运维文档
 ├── examples/            # 13 个最小可运行 Python 项目
 │   ├── 00-hello-llm/    # 基础 LLM 调用（DeepSeek 验证跑通）
 │   ├── 01-prompt-cot/  # CoT 推理
@@ -95,7 +95,7 @@ python app/main.py
 
 - **发现错别字 / 代码 bug** → 直接 PR
 - **想加 1 章新内容** → 先开 issue 讨论
-- **跑通 13 example 的真实验证** → 提 PR 更新 `docs/operations/E2E-RUN.md`
+- **跑通 13 example 的真实验证** → 提 PR 更新 `docs/operations/e2e-run.md`
 
 ## 📜 License
 
