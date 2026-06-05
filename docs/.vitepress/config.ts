@@ -17,6 +17,21 @@ export default defineConfig({
       { text: '生产进阶', link: '/production/00-prerequisites' }
     ],
     sidebar: {
+      '/examples/': [
+        { text: '00 hello-llm', link: 'https://github.com/Mr-Super-X/agent-app-dev/tree/main/examples/00-hello-llm' },
+        { text: '01 prompt-cot', link: 'https://github.com/Mr-Super-X/agent-app-dev/tree/main/examples/01-prompt-cot' },
+        { text: '02 rag-pipeline', link: 'https://github.com/Mr-Super-X/agent-app-dev/tree/main/examples/02-rag-pipeline' },
+        { text: '03 tool-calling', link: 'https://github.com/Mr-Super-X/agent-app-dev/tree/main/examples/03-tool-calling' },
+        { text: '04 agent-architecture', link: 'https://github.com/Mr-Super-X/agent-app-dev/tree/main/examples/04-agent-architecture' },
+        { text: '05 frameworks-compare', link: 'https://github.com/Mr-Super-X/agent-app-dev/tree/main/examples/05-frameworks-compare' },
+        { text: '06 customer-service', link: 'https://github.com/Mr-Super-X/agent-app-dev/tree/main/examples/06-customer-service' },
+        { text: '07 code-generation', link: 'https://github.com/Mr-Super-X/agent-app-dev/tree/main/examples/07-code-generation' },
+        { text: '08 multi-agent', link: 'https://github.com/Mr-Super-X/agent-app-dev/tree/main/examples/08-multi-agent' },
+        { text: '09 system-design', link: 'https://github.com/Mr-Super-X/agent-app-dev/tree/main/examples/09-system-design' },
+        { text: '10 evaluation', link: 'https://github.com/Mr-Super-X/agent-app-dev/tree/main/examples/10-evaluation' },
+        { text: '11 security', link: 'https://github.com/Mr-Super-X/agent-app-dev/tree/main/examples/11-security' },
+        { text: '12 engineering-async', link: 'https://github.com/Mr-Super-X/agent-app-dev/tree/main/examples/12-engineering-async' }
+      ],
       '/getting-started/': [
         {
           text: '阶段 1·打地基',

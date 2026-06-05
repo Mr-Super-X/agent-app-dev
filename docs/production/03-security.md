@@ -90,6 +90,35 @@ flowchart LR
 
 ### 2.5 威胁模型（STRIDE）
 
+```mermaid
+graph TD
+  S["S - Spoofing<br/>伪造身份<br/>例: JWT 盗用"]
+  T["T - Tampering<br/>篡改输入<br/>例: Prompt 注入"]
+  R["R - Repudiation<br/>操作抵赖<br/>例: 无审计日志"]
+  I["I - Info Disclosure<br/>信息泄漏<br/>例: PII 输出"]
+  D["D - Denial of Service<br/>拒绝服务<br/>例: Token 耗尽"]
+  E["E - Elevation<br/>权限越权<br/>例: 越狱 / 工具过大"]
+
+  subgraph Agent 系统
+    direction TB
+    S
+    T
+    R
+    I
+    D
+    E
+  end
+
+  S --> X["3 层防御:<br/>检测 / 防御 / 兜底"]
+  T --> X
+  R --> X
+  I --> X
+  D --> X
+  E --> X
+```
+
+（图 2.5：STRIDE 6 类威胁 → 3 层防御方案）
+
 **STRIDE** 是微软的威胁建模框架，6 类威胁 = Spoofing（伪造）/ Tampering（篡改）/ Repudiation（抵赖）/ Information Disclosure（泄漏）/ DoS / Elevation（越权）。映射到 Agent：伪造=JWT 盗用；篡改=Prompt 注入；抵赖=无审计；泄漏=PII；DoS=Token 耗尽；越权=越狱/工具过大。
 
 **实战用法**：项目立项把 6 类威胁逐项过一遍，每类写"检测 + 防御 + 兜底"。
