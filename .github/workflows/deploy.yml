@@ -32,6 +32,8 @@ jobs:
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - run: pnpm docs:build
+      - name: 诊断：列出 dist/operations/ 实际产物
+        run: ls -la docs/.vitepress/dist/operations/ && echo "--- all md files ---" && find docs -name "*.md" -not -path "*/superpowers/*" | head -20
       - uses: actions/configure-pages@v4
         with:
           enablement: true
