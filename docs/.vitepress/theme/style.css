@@ -26,3 +26,44 @@ blockquote.next-preview {
   justify-content: center;
   margin: 20px 0;
 }
+
+/* 章节快速导航卡片网格 */
+.chapter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.chapter-card {
+  display: block;
+  padding: 12px 14px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 6px;
+  text-decoration: none;
+  color: var(--vp-c-text-1);
+  transition: all 0.2s ease;
+}
+
+.chapter-card:hover {
+  border-color: var(--vp-c-brand-1);
+  background: var(--vp-c-bg-soft);
+  transform: translateY(-1px);
+}
+
+.chapter-card .emoji {
+  font-size: 22px;
+  margin-bottom: 4px;
+}
+
+.chapter-card .title {
+  font-weight: 600;
+  margin-bottom: 2px;
+  color: var(--vp-c-brand-1);
+}
+
+.chapter-card .desc {
+  font-size: 13px;
+  color: var(--vp-c-text-2);
+  line-height: 1.4;
+}
