@@ -10,12 +10,15 @@ const dirs = readdirSync(examplesDir, { withFileTypes: true })
   .filter((d) => d.isDirectory())
   .map((d) => d.name);
 
+// 跨平台 Python 命令：Windows 用 `python`，Linux/macOS 用 `python3`
+const pythonCmd = process.platform === 'win32' ? 'python' : 'python3';
+
 let failed = 0;
 for (const name of dirs) {
   const testFile = join(examplesDir, name, 'tests', 'test_smoke.py');
   if (!existsSync(testFile)) continue;
   console.log(`\n[smoke] ${name}`);
-  const r = spawnSync('python', ['-m', 'pytest', 'tests/', '-q'], {
+  const r = spawnSync(pythonCmd, ['-m', 'pytest', 'tests/', '-q'], {
     cwd: join(examplesDir, name),
     stdio: 'inherit',
     shell: true,
