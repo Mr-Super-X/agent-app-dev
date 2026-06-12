@@ -15,7 +15,8 @@ export default withMermaid(
   themeConfig: {
     nav: [
       { text: '入门教程', link: '/getting-started/00-roadmap' },
-      { text: '生产进阶', link: '/production/00-prerequisites' }
+      { text: '生产进阶', link: '/production/00-prerequisites' },
+      { text: '考试中心', link: '/exam/AI-Agent-Engineer-Exam' }
     ],
     sidebar: {
       '/operations/': [
@@ -70,6 +71,9 @@ export default withMermaid(
         { text: 'Ch2 评估与优化', link: '/production/02-evaluation' },
         { text: 'Ch3 安全与风险', link: '/production/03-security' },
         { text: 'Ch4 工程实战', link: '/production/04-engineering' }
+      ],
+      '/exam/': [
+        { text: 'AI Agent 工程师 P5 笔试卷', link: '/exam/AI-Agent-Engineer-Exam' }
       ]
     },
     search: { provider: 'local' },

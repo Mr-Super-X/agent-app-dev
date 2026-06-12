@@ -15,6 +15,12 @@
 ## [Unreleased]
 
 ### Added
+- **AI Agent 工程师招聘笔试卷**（[AI-Agent-Engineer-Exam](/exam/AI-Agent-Engineer-Exam)）：对标 P5 / T5 / 2-1 / L5，120 分钟 / 100 分
+  - 双向索引表（考点 ↔ 教程 13 章 + 2024-2026 招聘热点）
+  - 选择题 10 道（20 分）+ 填空题 5 道（10 分）+ 简答题 4 道（32 分）+ 编程题 2-3 道（24 分）+ 系统设计题 1 道（14 分）
+  - 完整参考答案与详解：含干扰项分析、评分要点、复杂度分析、加分项
+  - 覆盖：Agent 4 能力 / RAG 4 环节 / 框架选型 / 工具权限分层 / 限流-缓存-降级-成本 / 注入-越狱-隔离 / 异步-流式 + MCP / A2A / Prompt Caching / Structured Outputs / 推理模型 / Long Context / Agent Observability 等招聘热点
+- VitePress 导航新增"考试中心"入口（`docs/.vitepress/config.ts`）
 - 教程设计 spec（commit dbfab4c）
 - 实施 plan（commit bf87530）
 - 项目脚手架（package.json、pyproject.toml、tsconfig.json、首页占位）
